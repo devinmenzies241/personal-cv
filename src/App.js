@@ -38,6 +38,9 @@ function App(props, state) {
       <div className='pg-2'>
       <h1>Projects</h1>
       </div>
+      <div className='pg-3'>
+      <h1>Contact</h1>
+      </div>
     </div> 
   );
 }
