@@ -1,6 +1,39 @@
 .App{
-  background-color: #dfe6e9;
+  /* background-image: url("../public/images/forest.JPG");
+  background-repeat: none;
+  background-size:cover; */
 }
+/* Menu ////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.sideNav {
+  height: 15%;  
+  width: 100%;  
+  position: fixed; 
+  z-index: 1; 
+  bottom:0;
+  /* top: 0;  */
+  /* left: 0;  */
+  background-color:#232323; 
+  transition: .5s ease; 
+  overflow-x: hidden; 
+  /* overflow-y: hidden;  */
+  padding-top: 20px; 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+}
+
+.sideNav a {
+  color: white;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Elements ///////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 h1 {
   font-family: 'Lato', sans-serif;
@@ -12,11 +45,12 @@ h2 {
   font-family: 'Raleway', sans-serif;
 }
 
-.header {
-  background-image: url("");
+.main {
   height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: margin-bottom .5s;
+  padding: 20px;
 }

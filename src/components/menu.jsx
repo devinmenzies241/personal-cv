@@ -1,11 +1,14 @@
 const Menu = () => {
   return (
-    <div class="vertical-menu">
-      <a href="#" class="active">Home</a>
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-      <a href="#">Link 4</a>
+    <div>
+      <div id="mySidenav" className="sidenav">
+        <a href="javascript:void(0)" className="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      <span onclick="openNav()">open</span>
     </div>
   )
 }

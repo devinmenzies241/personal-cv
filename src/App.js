@@ -1,17 +1,32 @@
 import './App.css';
-import Menu from './components/menu.jsx'; 
+import Navbar from './components/Navbar.jsx'; 
+import {useState} from 'react'; 
 
-function App() {
+function App(props, state) {
+
+  const [height, setHeight] = useState('0%'); 
+
+  const [visibility, setVisibility] = useState('visible'); 
+
+  const openSidenav = ( ) => {
+    setHeight('25%'); 
+    setVisibility('visible'); 
+  }
+
+  const closeSidenav = ( ) => {
+    setHeight('0%'); 
+    setVisibility('hidden'); 
+  }
+
   return (
     <div className="App">
-      <section className="App-home">
-        <div className="header">
-          <Menu />
-          <h1>Devin Menzies</h1>
-          <h2>Front End Web Developer</h2>
-        </div>
-      </section>
-    </div>
+      <Navbar height={height} closeNav={closeSidenav} visibility={visibility}/>
+      <div className="main">
+        <h1>Devin Menzies</h1>
+        <h2>Front End Web Developer</h2>
+        <button className='sideNavOpenButton'onClick={openSidenav}>Learn More</button>
+      </div>
+    </div> 
   );
 }
 
