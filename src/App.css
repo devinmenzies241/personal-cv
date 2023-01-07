@@ -2,18 +2,77 @@
   /* background-image: url("../public/images/forest.JPG");
   background-repeat: none;
   background-size:cover; */
+  background-color: rgb(26, 26, 26);
 }
+
+/* .bg-color-2 {
+  height: 100vh;
+  width: 100vw;
+  background-color: aqua;
+  clip-path: polygon(0 0, 100% 0, 100% 51%, 100% 100%, 0 51%);
+  display: block;
+  position: fixed;
+  z-index: 0; 
+} */
+
+/* Elements ///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+h1 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 8rem;  
+  margin: 0;
+  color:rgb(251, 255, 251);
+  /* text-shadow: -2px 2px 0px #00e6e6,
+               -8px 8px 0px #01cccc,
+               -12px 12px 0px #00bdbd; */
+  /* text-shadow: -3px 1px 10px rgb(245, 151, 27); */
+}
+
+h2 {
+  font-family: 'Source Code Pro', monospace;
+  color:rgb(247, 193, 65);
+  /* color:rgb(246, 175, 9); */
+  font-size: 3rem;
+}
+
+.main {
+  height: 100vh;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  transition: height 1s;
+  /* position: relative;
+  z-index: 2; */
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg,rgba(253,187,45,1) 0%, rgba(34,193,195,1) 100%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 51%, 100% 100%, 0 51%); */
+}
+
+.mid-layer {
+  margin: auto;
+  margin-top: 5%;
+}
+
+.hero {
+  margin: auto;
+  margin-top: 3%;
+  /* margin-left: 5%; */
+  text-align: center;
+}
+
+
 /* Menu ////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .sideNav {
   height: 15%;  
   width: 100%;  
-  position: fixed; 
+  position: absolute; 
   z-index: 1; 
   bottom:0;
   /* top: 0;  */
   /* left: 0;  */
-  background-color:#232323; 
-  transition: .5s ease; 
+  background-color: rgb(239, 154, 16); 
+  transition: 0.75s ease; 
   overflow-x: hidden; 
   /* overflow-y: hidden;  */
   padding-top: 20px; 
@@ -21,36 +80,113 @@
   flex-direction: row; 
   align-items: center;
   justify-content: center;
+  margin:auto;
+  clip-path: circle(51.4% at 50% 170%);
+  box-shadow: 10px 2px 10px 1px rgba(252, 255, 47, 0.2);
 }
 
 .sideNav a {
   color: white;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+
+/* BUTTON /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.pushable {
+  font-family: 'Source Code Pro', monospace;
+  /* margin: auto; */
+  position: absolute;
+  left: 45%;
+  bottom:20%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  width: 10%;
 }
 
-/* Elements ///////////////////////////////////////////////////////////////////////////////////////////////////*/
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
 
-h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 5rem;
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+.front {
+  display: block;
+  position: relative;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
   color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+.pushable:hover {
+  filter: brightness(110%);
+}
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+.pushable:focus:not(:focus-visible) {
+  outline: none;
 }
 
-h2 {
-  font-family: 'Raleway', sans-serif;
-}
 
-.main {
+
+
+
+.pg-2 {
   height: 100vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: margin-bottom .5s;
-  padding: 20px;
+  width: 100vh;
+  background-color: black;
 }
