@@ -1,9 +1,9 @@
-import Button from './Button.jsx'; 
+// import Button from './Button.jsx'; 
 
 const Navbar = (props) => {
   return (
     <div className='sideNav' onScroll={props.clickFunction} style={{height: props.height, visibility: props.visibility}}>
-      <button onClick={props.clickFunction}>X</button>
+      <button className='close-btn' onClick={props.clickFunction}>X</button>
       <a href=''>About me</a>
       <a href=''>Portfolio</a>
       <a href=''>Contact</a> 

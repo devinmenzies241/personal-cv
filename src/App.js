@@ -2,7 +2,8 @@ import './App.css';
 import Navbar from './components/Navbar.jsx'; 
 import {useState} from 'react'; 
 import Button from './components/Button.jsx';
-import Pfp from './components/Pfp.jsx'; 
+// import TopBar from './components/TopBar';
+// import Pfp from './components/Pfp.jsx'; 
 // import helpers from './components/helpers';
 
 function App(props, state) {
@@ -28,7 +29,7 @@ function App(props, state) {
           <div className='hero'>
             <h2>Hi! I'm</h2>
             <h1>Devin Menzies</h1>
-            <h2>I'm a web developer seeking entry level employment.</h2>
+            <h2>I'm a web developer seeking opportunities for growth.</h2>
           </div>
         </div>
         {/* <Pfp /> */}
@@ -36,10 +37,13 @@ function App(props, state) {
       </div>
       <Navbar height={height} clickFunction={closeSidenav} visibility={visibility} text={'Close'}/>
       <div className='pg-2'>
-      <h1>Projects</h1>
+      <h1>projects</h1>
       </div>
       <div className='pg-3'>
-      <h1>Contact</h1>
+      <h1>about Me</h1>
+      </div>
+      <div className='pg-4'>
+      <h1>contact</h1>
       </div>
     </div> 
   );
